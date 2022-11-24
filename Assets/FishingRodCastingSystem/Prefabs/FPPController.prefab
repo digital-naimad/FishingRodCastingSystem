@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100006, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_Name
-      value: RigidBodyFPSController Variant
+      value: FPPController
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_RootOrder
@@ -74,6 +74,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5343781091176666690}
     m_Modifications:
+    - target: {fileID: 2101612467209627845, guid: 3000126eca3647049b64537abd10a74a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2637440451162855542, guid: 3000126eca3647049b64537abd10a74a, type: 3}
       propertyPath: m_Name
       value: Rod
@@ -126,5 +130,9 @@ PrefabInstance:
       propertyPath: fppCamera
       value: 
       objectReference: {fileID: 5343781091177154624}
+    - target: {fileID: 7781538362978575804, guid: 3000126eca3647049b64537abd10a74a, type: 3}
+      propertyPath: veinThickness
+      value: 0.002
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3000126eca3647049b64537abd10a74a, type: 3}

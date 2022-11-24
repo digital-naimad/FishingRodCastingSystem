@@ -30,10 +30,13 @@ namespace FishingRodSystem
             springJoint = startPoint.GetComponent<SpringJoint>();
 
             // The first update inits the spring we use to approximate the vein between point A and B
-            UpdateSpring();
+            UpdateVein();
 
-            // Adds the weight of an attachement
-            endPoint.GetComponent<Rigidbody>().mass = attachedWeight;
+            if (!areBothSidesStatic)
+            {
+                // Adds the weight of an attachement
+                endPoint.GetComponent<Rigidbody>().mass = attachedWeight;
+            }
         }
 
         void Update()
@@ -44,11 +47,16 @@ namespace FishingRodSystem
 
         #endregion
 
-        #region Private methods
+        #region Override methods
+        protected override void CreateVein()
+        {
+            // dummy method
+        }
+
         /// <summary>
         /// Updates the spring constant and the length of the spring
         /// </summary>
-        private void UpdateSpring()
+        protected override void UpdateVein()
         {
             float veinVolume = Mathf.PI * veinRadius * veinRadius * veinLength;
             float veinMass = veinVolume * veinDensity;
@@ -73,7 +81,7 @@ namespace FishingRodSystem
         /// <summary>
         /// Displays the vein using a line renderer
         /// </summary>
-        private void DrawVein()
+        protected override void DrawVein()
         {
             lineRenderer.startWidth = veinThickness; 
             lineRenderer.endWidth = veinThickness;
@@ -132,7 +140,7 @@ namespace FishingRodSystem
                 veinLength = Mathf.Clamp(veinLength, minVeinLength, maxVeinLength);
 
                 // Needs to recalculate the k-value due the fact it depends on the length of the vein
-                UpdateSpring();
+                UpdateVein();
             }
         }
         #endregion

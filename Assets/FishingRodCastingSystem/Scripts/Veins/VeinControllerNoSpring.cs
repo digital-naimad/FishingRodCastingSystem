@@ -12,28 +12,34 @@ namespace FishingRodSystem
         {
             CreateVein();
 
-            maximumStretchIterations = 20; // TODO: remove hardcoded value
+            //maximumStretchIterations = 20; // TODO: remove hardcoded value
         }
 
         private void Update()
         {
+            UpdateVein();
             DrawVein();
 
-            // Moves the attachement to the end of the vein
-            endPoint.position = veinSegmentsList[veinSegmentsList.Count - 1].Position;
-            endPoint.LookAt(veinSegmentsList[veinSegmentsList.Count - 2].Position);
+            if (!areBothSidesStatic)
+            {
+                // Moves the attachement to the end of the vein
+                endPoint.position = veinSegmentsList[veinSegmentsList.Count - 1].Position;
+                endPoint.LookAt(veinSegmentsList[veinSegmentsList.Count - 2].Position);
+            }
+
+            
         }
 
         private void FixedUpdate()
         {
-            UpdateVein();
+            
         }
 
         #endregion
 
-        #region Private methods
+        #region Override methods
 
-        private void CreateVein()
+        protected override void CreateVein()
         {
             Vector3 segmentPosition = startPoint.position;
 
@@ -45,7 +51,7 @@ namespace FishingRodSystem
             }
         }
 
-        private void UpdateVein()
+        protected override void UpdateVein()
         {
             float deltaTime = Time.fixedDeltaTime;
 
@@ -84,6 +90,29 @@ namespace FishingRodSystem
             }
         }
 
+       
+        /// <summary>
+        /// Display the vein with a line renderer
+        /// </summary>
+        protected override void DrawVein()
+        {
+            lineRenderer.startWidth = veinThickness;
+            lineRenderer.endWidth = veinThickness;
+
+            // Vein segments positions
+            Vector3[] positions = new Vector3[veinSegmentsList.Count];
+
+            for (int i = 0; i < veinSegmentsList.Count; i++)
+            {
+                positions[i] = veinSegmentsList[i].Position;
+            }
+
+            lineRenderer.positionCount = positions.Length;
+            lineRenderer.SetPositions(positions);
+        }
+        #endregion
+
+        #region Private methods
         /// <summary>
         /// Provides the vein segments have the correct lengths
         /// </summary>
@@ -95,7 +124,7 @@ namespace FishingRodSystem
 
                 VeinSegment bottomSection = veinSegmentsList[i + 1];
 
-                //The distance between the sections
+                // The distance between the sections
                 float dist = (topSection.Position - bottomSection.Position).magnitude;
 
                 //What's the stretch/compression
@@ -112,7 +141,7 @@ namespace FishingRodSystem
                 {
                     changeDir = (bottomSection.Position - topSection.Position).normalized;
                 }
-                else // idle
+                else // Idling
                 {
                     continue;
                 }
@@ -138,27 +167,8 @@ namespace FishingRodSystem
                 }
             }
         }
-
-        /// <summary>
-        /// Display the vein with a line renderer
-        /// </summary>
-        private void DrawVein()
-        {
-            lineRenderer.startWidth = veinThickness;
-            lineRenderer.endWidth = veinThickness;
-
-            // Vein segments positions
-            Vector3[] positions = new Vector3[veinSegmentsList.Count];
-
-            for (int i = 0; i < veinSegmentsList.Count; i++)
-            {
-                positions[i] = veinSegmentsList[i].Position;
-            }
-
-            lineRenderer.positionCount = positions.Length;
-            lineRenderer.SetPositions(positions);
-        }
         #endregion
+
 
     }
 }

@@ -18,9 +18,23 @@ namespace FishingRodSystem
 
         
         [Range(1, 100)]
-        [SerializeField] private int simulationIterationNumber = 1;
+        [SerializeField] private int simulationIterationNumber = 10;
+
+
 
         #region MonoBehaviour's callbacks
+
+        private void OnEnable()
+        {
+           // Application.onBeforeRender += DrawVein;
+        }
+
+        private void OnDisable()
+        {
+           // Application.onBeforeRender -= DrawVein;
+        }
+
+
         void Start()
         {
             CreateVein();
@@ -28,16 +42,38 @@ namespace FishingRodSystem
 
         void Update()
         {
-            DrawVein();
-            VerifyVeinLength();
+            if (veinSegmentsList.Count > 0)
+            {
 
-            // Moves what is hanging from the vein to the end
-            endPoint.position = veinSegmentsList[0].Position;
+                   // UpdateVein(veinSegmentsList, Time.deltaTime);
+
+                
+                
+                float timeStep = Time.deltaTime / (float)simulationIterationNumber;
+
+                for (int i = 0; i < simulationIterationNumber; i++)
+                {
+                   UpdateVein(veinSegmentsList, timeStep);
+
+                }
+                
+            }
+
+            DrawVein();
+            //VerifyVeinLength();
+
+            if (!areBothSidesStatic)
+            {
+                // Moves what is hanging from the vein to the end
+                endPoint.position = veinSegmentsList[0].Position;
+            }
+
             endPoint.LookAt(veinSegmentsList[1].Position);
         }
 
         void FixedUpdate()
         {
+            /*
             if (veinSegmentsList.Count > 0)
             {
                 float timeStep = Time.fixedDeltaTime / (float)simulationIterationNumber;
@@ -45,18 +81,28 @@ namespace FishingRodSystem
                 for (int i = 0; i < simulationIterationNumber; i++)
                 {
                     UpdateVein(veinSegmentsList, timeStep);
+                    
                 }
             }
+            */
+        }
+
+        /// <summary>
+        /// Works only added to gameObject with added Camera component 
+        /// </summary>
+        private void OnPreRender()
+        {
+           // DrawVein();
         }
 
         #endregion
 
-        #region Private methods
+        #region Override methods
 
         /// <summary>
         /// Builds the vein top to bottom
         /// </summary>
-        private void CreateVein()
+        protected override void CreateVein()
         {
             Vector3 startPosition = startPoint.position;
 
@@ -64,13 +110,12 @@ namespace FishingRodSystem
 
             for (int i = 0; i < numberOfSegments; i++)
             {
-                //Debug.Log("pos " + i + " " + pos);
                 veinSegmentsPositions.Add(startPosition);
 
                 startPosition.y -= veinSegmentLength;
             }
 
-            // Adds a segments from bottom because to provide a dynamic length of the vein
+            // Adds a segments from bottom to provide a dynamic length of the vein
             for (int i = veinSegmentsPositions.Count - 1; i >= 0; i--)
             {
                 veinSegmentsList.Add(new VeinSegment(veinSegmentsPositions[i]));
@@ -80,7 +125,7 @@ namespace FishingRodSystem
         /// <summary>
         /// Visualizes vein using line renderer
         /// </summary>
-        private void DrawVein()
+        protected override void DrawVein()
         {
             lineRenderer.startWidth = veinThickness;
             lineRenderer.endWidth = veinThickness;
@@ -95,6 +140,18 @@ namespace FishingRodSystem
             lineRenderer.positionCount = segmentsPositions.Length;
             lineRenderer.SetPositions(segmentsPositions);
         }
+
+        /// <summary>
+        /// Dummy method
+        /// </summary>
+        protected override void UpdateVein()
+        {
+            
+        }
+
+        #endregion
+
+        #region Private methods
 
         private void UpdateVein(List<VeinSegment> veinSegments, float timeStep)
         {
@@ -148,7 +205,7 @@ namespace FishingRodSystem
 
             //Implement maximum stretch to avoid numerical instabilities
             //May need to run the algorithm several times
-           
+
 
             for (int i = 0; i < maximumStretchIterations; i++)
             {
@@ -212,8 +269,9 @@ namespace FishingRodSystem
                 float springMass = veinSectionMass;
 
                 //end of the vein is attached to a box with a mass
-                if (i == 0)
+                if (!areBothSidesStatic && i == 0)
                 {
+
                     springMass += endPoint.GetComponent<Rigidbody>().mass;
                 }
 
@@ -260,10 +318,10 @@ namespace FishingRodSystem
 
                 if (stretch > maxStretch)
                 {
-                    //How far do we need to compress the spring?
+                    // How far do compress the spring
                     float compressLength = dist - (veinSegmentLength * maxStretch);
 
-                    //In what direction should we compress the spring?
+                    // In what direction should we compress the spring?
                     Vector3 compressDir = (topSegment.Position - bottomSegment.Position).normalized;
 
                     Vector3 change = compressDir * compressLength;
@@ -272,10 +330,10 @@ namespace FishingRodSystem
                 }
                 else if (stretch < minStretch)
                 {
-                    //How far do we need to stretch the spring?
+                    // How far do stretch the spring?
                     float stretchLength = (veinSegmentLength * minStretch) - dist;
 
-                    //In what direction should we compress the spring?
+                    // Direction to compress the spring
                     Vector3 stretchDir = (bottomSegment.Position - topSegment.Position).normalized;
 
                     Vector3 change = stretchDir * stretchLength;
@@ -294,7 +352,7 @@ namespace FishingRodSystem
         {
             VeinSegment lastSegment = veinSegmentsList[index];
 
-            //Move the bottom section
+            // Moves the bottom section
             Vector3 position = lastSegment.Position;
 
             position += finalChange;
