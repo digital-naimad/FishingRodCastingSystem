@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace FishingRodSystem
@@ -8,6 +5,8 @@ namespace FishingRodSystem
     public class ReelController : MonoBehaviour
     {
         [SerializeField] private Animator reelAnimator;
+
+
 
         private void Awake()
         {
@@ -23,29 +22,55 @@ namespace FishingRodSystem
         // Update is called once per frame
         void Update()
         {
+#if UNITY_EDITOR
             if (reelAnimator != null)
             {
+
                 if (Input.GetKeyDown(KeyCode.O))
                 {
-                    //reelAnimator.SetTrigger(nameof(ReelParameter.SpinForwardTrigger));
-
-                    reelAnimator.SetBool(nameof(ReelParameter.IsSpinning), true);
-                    reelAnimator.SetBool(nameof(ReelParameter.IsSpinningForward), true);
+                    SpinForward();
                 }
 
                 if (Input.GetKeyDown(KeyCode.L))
                 {
-                    //reelAnimator.SetTrigger(nameof(ReelParameter.SpinBackwardTrigger));
-
-                    reelAnimator.SetBool(nameof(ReelParameter.IsSpinning), true);
-                    reelAnimator.SetBool(nameof(ReelParameter.IsSpinningForward), false);
+                    SpinBackward();
                 }
 
                 if (Input.GetKeyUp(KeyCode.O) || Input.GetKeyUp(KeyCode.L))
                 {
-                    reelAnimator.SetBool(nameof(ReelParameter.IsSpinning), false);
+                    StopSpinning();
                 }
             }
+#endif
         }
+
+        #region Public methods
+        public void SpinForward()
+        {
+            if (reelAnimator != null)
+            {
+                //reelAnimator.SetTrigger(nameof(ReelParameter.SpinForwardTrigger));
+
+                reelAnimator.SetBool(nameof(ReelParameter.IsSpinning), true);
+                reelAnimator.SetBool(nameof(ReelParameter.IsSpinningForward), true);
+            }
+        }
+
+        public void SpinBackward()
+        {
+            //reelAnimator.SetTrigger(nameof(ReelParameter.SpinBackwardTrigger));
+            if (reelAnimator != null)
+            {
+                reelAnimator.SetBool(nameof(ReelParameter.IsSpinning), true);
+                reelAnimator.SetBool(nameof(ReelParameter.IsSpinningForward), false);
+            }
+        }
+
+        public void StopSpinning()
+        {
+            if (reelAnimator != null)
+                reelAnimator.SetBool(nameof(ReelParameter.IsSpinning), false);
+        }
+        #endregion
     }
 }

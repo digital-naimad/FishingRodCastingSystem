@@ -88,6 +88,7 @@ MonoBehaviour:
   raycastingLayer:
     serializedVersion: 2
     m_Bits: 16
+  reelController: {fileID: 9003166269131489465}
 --- !u!1001 &83620243127296379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -319,6 +320,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69f1b249324e7d143a7d7a5cd4cfa944, type: 3}
+--- !u!114 &9003166269131489465 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8602120677107116818, guid: 69f1b249324e7d143a7d7a5cd4cfa944, type: 3}
+  m_PrefabInstance: {fileID: 833574036026928043}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d81799bae04ad4b9f0b9b838b3903e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2951348114452810073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2550225215802385138, guid: 69f1b249324e7d143a7d7a5cd4cfa944, type: 3}

@@ -17,8 +17,7 @@ namespace FishingRodSystem
         [SerializeField] private int numberOfSegments = 10;
 
         
-        [Range(1, 100)]
-        [SerializeField] private int simulationIterationNumber = 10;
+       
 
 
 
@@ -26,12 +25,12 @@ namespace FishingRodSystem
 
         private void OnEnable()
         {
-           // Application.onBeforeRender += DrawVein;
+           Application.onBeforeRender += DrawVein;
         }
 
         private void OnDisable()
         {
-           // Application.onBeforeRender -= DrawVein;
+           Application.onBeforeRender -= DrawVein;
         }
 
 
@@ -44,19 +43,15 @@ namespace FishingRodSystem
         {
             if (veinSegmentsList.Count > 0)
             {
+                UpdateVein(veinSegmentsList, Time.deltaTime);
 
-                   // UpdateVein(veinSegmentsList, Time.deltaTime);
-
-                
-                
                 float timeStep = Time.deltaTime / (float)simulationIterationNumber;
 
                 for (int i = 0; i < simulationIterationNumber; i++)
                 {
-                   UpdateVein(veinSegmentsList, timeStep);
-
+                    UpdateVein(veinSegmentsList, timeStep);
+                    DrawVein();
                 }
-                
             }
 
             DrawVein();
@@ -73,7 +68,7 @@ namespace FishingRodSystem
 
         void FixedUpdate()
         {
-            /*
+            
             if (veinSegmentsList.Count > 0)
             {
                 float timeStep = Time.fixedDeltaTime / (float)simulationIterationNumber;
@@ -84,11 +79,11 @@ namespace FishingRodSystem
                     
                 }
             }
-            */
+            
         }
 
         /// <summary>
-        /// Works only added to gameObject with added Camera component 
+        /// Works only if is added to gameObject which includes Camera component 
         /// </summary>
         private void OnPreRender()
         {
