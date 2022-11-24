@@ -23,7 +23,7 @@ namespace FishingRodSystem
         {
             set
             {
-                _numberOfSegments = Mathf.Clamp(value, 0, segmentsLimit);
+                _numberOfSegments = Mathf.Clamp(value, 10, segmentsLimit);
             }
             get
             {

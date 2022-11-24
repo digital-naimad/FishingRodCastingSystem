@@ -956,6 +956,14 @@ PrefabInstance:
       propertyPath: endPoint
       value: 
       objectReference: {fileID: 889187045}
+    - target: {fileID: 1008383210718552442, guid: 02747d40a3f91564f9d039d00a19a8a4, type: 3}
+      propertyPath: m_Positions.Array.data[0].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008383210718552442, guid: 02747d40a3f91564f9d039d00a19a8a4, type: 3}
+      propertyPath: m_Positions.Array.data[1].y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1442907102730642648, guid: 02747d40a3f91564f9d039d00a19a8a4, type: 3}
       propertyPath: m_ConnectedBody
       value: 
@@ -985,8 +993,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 889187045}
     - target: {fileID: 2667718789536738326, guid: 02747d40a3f91564f9d039d00a19a8a4, type: 3}
+      propertyPath: veinFriction
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2667718789536738326, guid: 02747d40a3f91564f9d039d00a19a8a4, type: 3}
+      propertyPath: springConstant
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2667718789536738326, guid: 02747d40a3f91564f9d039d00a19a8a4, type: 3}
+      propertyPath: veinSegmentLength
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2667718789536738326, guid: 02747d40a3f91564f9d039d00a19a8a4, type: 3}
       propertyPath: simulationIterationNumber
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3708390541289835673, guid: 02747d40a3f91564f9d039d00a19a8a4, type: 3}
       propertyPath: m_IsActive
@@ -1158,6 +1178,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7614915638302461740, guid: 02747d40a3f91564f9d039d00a19a8a4, type: 3}
       propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614915638302461740, guid: 02747d40a3f91564f9d039d00a19a8a4, type: 3}
+      propertyPath: m_Positions.Array.data[0].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614915638302461740, guid: 02747d40a3f91564f9d039d00a19a8a4, type: 3}
+      propertyPath: m_Positions.Array.data[0].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614915638302461740, guid: 02747d40a3f91564f9d039d00a19a8a4, type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614915638302461740, guid: 02747d40a3f91564f9d039d00a19a8a4, type: 3}
+      propertyPath: m_Positions.Array.data[1].y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7930828417537954852, guid: 02747d40a3f91564f9d039d00a19a8a4, type: 3}

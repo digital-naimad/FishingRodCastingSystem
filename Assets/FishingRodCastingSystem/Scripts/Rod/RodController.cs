@@ -38,12 +38,7 @@ namespace FishingRodSystem
         // Update is called once per frame
         void Update()
         {
-
-
-
             ProcessInputs();
-
-            
         }
 
         private void ProcessInputs()
@@ -79,26 +74,26 @@ namespace FishingRodSystem
             */
 
             
-            if (Input.mouseScrollDelta.y != 0)
+            //if (Input.mouseScrollDelta.y != 0)
             {
                 //Debug.Log(name + " | scroll delta y" + Input.mouseScrollDelta.y);
 
-                if (Input.mouseScrollDelta.y > 0)
+                if (Input.mouseScrollDelta.y < 0)
                 {
-                    reelController.SpinForward();
-                    veinController.UnwindVein();
-                    
+                   
+                    reelController.SpinBackward();
+                    veinController.WindVein();
+
                 }
                 else
                 {
-                    reelController.SpinBackward();
-                    veinController.WindVein();
+                    reelController.StopSpinning();
                 }
 
             }
-            else //if (Input.mouseScrollDelta.y == 0)
+            //else //if (Input.mouseScrollDelta.y == 0)
             {
-                reelController.StopSpinning();
+               
             }
             
         }
