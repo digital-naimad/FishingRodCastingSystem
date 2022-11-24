@@ -48,6 +48,9 @@ MonoBehaviour:
   raycastRange: 100
   raycastHitMarker: {fileID: 1365600947225930833, guid: f91814d6e861b3c41a757c5f69c50613, type: 3}
   hitMarkerLifetime: 2
+  raycastingLayer:
+    serializedVersion: 2
+    m_Bits: 16
 --- !u!1001 &833574036026928043
 PrefabInstance:
   m_ObjectHideFlags: 0

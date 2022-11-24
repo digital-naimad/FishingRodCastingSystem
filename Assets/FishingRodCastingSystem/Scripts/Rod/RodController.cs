@@ -13,6 +13,8 @@ namespace FishingRodSystem
         [SerializeField] private GameObject raycastHitMarker;
         [SerializeField] private float hitMarkerLifetime = 2.0f;
 
+        [SerializeField] private LayerMask raycastingLayer;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -34,14 +36,22 @@ namespace FishingRodSystem
 
             RaycastHit hit;
 
-            bool isHitAnything = Physics.Raycast(fppCamera.transform.position, fppCamera.transform.forward, out hit, raycastRange);
+            bool isHitAnything = Physics.Raycast(fppCamera.transform.position, fppCamera.transform.forward, out hit, raycastRange, raycastingLayer);
 
             if (isHitAnything)
             {
                 Debug.Log(name + " | Raycast hit: " + hit.transform.name);
 
+                //if (hit.collider.gameObject.layer == raycastingLayer)
+                {
+                    //Debug.Log(name + " | Raycast hit layer: " + raycastingLayer);
+                }
+                //raycastingLayer
+
                 GameObject hitMarker = Instantiate(raycastHitMarker, hit.point, Quaternion.LookRotation(hit.normal));
                 Destroy(hitMarker, hitMarkerLifetime);
+
+
             }
 
         }
