@@ -69,7 +69,17 @@ ModelImporter:
   - first:
       74: 2309789884207188202
     second: BassP_walkaWypieHaczyk
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BassPeacock1
+    second: {fileID: 2100000, guid: cdb8142c1de6a914ab109e0072e58200, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BassPeacock1_transp
+    second: {fileID: 2100000, guid: 14d7ba9f8863eba4db1fcfaa9fa13e72, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

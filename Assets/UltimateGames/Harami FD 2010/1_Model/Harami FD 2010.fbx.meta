@@ -3,7 +3,27 @@ guid: 126c8053ea036fc43a91175a854cfc1a
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Harami FD 2010 beben
+    second: {fileID: 2100000, guid: cffbea72f877dd045bc4fe4177b31fca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Harami FD 2010 korba
+    second: {fileID: 2100000, guid: 40fb2bd6a8a12df44a4c02f83deadaa4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Harami FD 2010 korpus
+    second: {fileID: 2100000, guid: eb8f336c2e603cd4b9e40660f6b06986, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Harami FD 2010 szpula
+    second: {fileID: 2100000, guid: c92beef4de1122f4cad88f0869b71cb0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
