@@ -487,6 +487,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3871045525050285960, guid: ba4799810f3dd2540ac08b887a27f413, type: 3}
+      propertyPath: m_Name
+      value: Bone.001_rigidBody
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba4799810f3dd2540ac08b887a27f413, type: 3}
 --- !u!4 &2526707823475884308 stripped

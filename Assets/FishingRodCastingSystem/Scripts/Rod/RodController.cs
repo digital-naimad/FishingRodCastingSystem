@@ -1,13 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace FishingRodSystem
 {
-
-    public class RodController : MonoBehaviour
+    public class RodController : MonoSingleton<RodController>
     {
         [Header("Raycasting")]
         [SerializeField] private Camera fppCamera;
