@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: e4e0403c35abea2448b0963001c4df87
+ModelImporter:
+  serializedVersion: 21100
+  internalIDToNameTable:
+  - first:
+      74: 7053974051120039805
+    second: G2_wisi6
+  - first:
+      74: -2309693716769996220
+    second: G2_wisi5
+  - first:
+      74: -1647827750139402058
+    second: G2_wisi4
+  - first:
+      74: -7642149481795205522
+    second: G2_wisi3
+  - first:
+      74: -8078771598529211015
+    second: G2_wisi2
+  - first:
+      74: 9104520618197519175
+    second: G2_wisi
+  - first:
+      74: -7258145887827711567
+    second: G1_walkaWyskok2
+  - first:
+      74: -4852347333660216068
+    second: G1_walkaWyskok
+  - first:
+      74: 2438223074459489877
+    second: G1_walkaWypieHaczyk
+  - first:
+      74: -4861232852118632264
+    second: G1_walkaSzarpanie3
+  - first:
+      74: 7819800264360468865
+    second: G1_walkaSzarpanie2
+  - first:
+      74: -5643545257341274568
+    second: G1_walkaSzarpanie
+  - first:
+      74: 8151273079708442552
+    second: G1_skubaniePrzynety
+  - first:
+      74: 5821279995990563175
+    second: G1_plynieWolno
+  - first:
+      74: -9170205271815821615
+    second: G1_plynieSzybko2
+  - first:
+      74: 3098145643935123836
+    second: G1_plynieSzybko
+  - first:
+      74: -2730360404930517440
+    second: G1_plynieStoi2
+  - first:
+      74: 8297531110957379050
+    second: G1_plynieStoi
+  - first:
+      74: -7094855350246022545
+    second: G1_plynieSrednio
+  - first:
+      74: -7503050282353392330
+    second: G1_atakPrzynety
+  - first:
+      74: 84342107436610300
+    second: _rece3
+  - first:
+      74: 1457745286064055944
+    second: _rece2
+  - first:
+      74: -6457754608589926210
+    second: _rece
+  - first:
+      74: -1532670985554880253
+    second: _lezyPoWalce_R
+  - first:
+      74: -6192438109228270129
+    second: _lezyPoWalce_L
+  - first:
+      74: 8933458457971888007
+    second: _lezyPoWalce
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

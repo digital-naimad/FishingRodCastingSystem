@@ -1,0 +1,168 @@
+fileFormatVersion: 2
+guid: 1716adad6ee3a5f4e9c7eb79bb687471
+ModelImporter:
+  serializedVersion: 21100
+  internalIDToNameTable:
+  - first:
+      74: -5862721383043202414
+    second: BassP_wisiHaczyk2
+  - first:
+      74: 3408100461791166784
+    second: BassP_wisiHaczyk
+  - first:
+      74: -6894908363879939651
+    second: BassP_wisiChwytak2
+  - first:
+      74: -8661326559418367142
+    second: BassP_wisiChwytak
+  - first:
+      74: 2469706672230274916
+    second: BassP_walkaWyskok2
+  - first:
+      74: 2938803796463126685
+    second: BassP_walkaWyskok
+  - first:
+      74: -932005665473688912
+    second: BassP_walkaSzarpanie4
+  - first:
+      74: -7423253608986812533
+    second: BassP_walkaSzarpanie3
+  - first:
+      74: 6065251208429033744
+    second: BassP_walkaSzarpanie2
+  - first:
+      74: -346161984513201261
+    second: BassP_walkaSzarpanie
+  - first:
+      74: 5316466160221149387
+    second: BassP_skubaniePrzynety
+  - first:
+      74: -1978236120625652259
+    second: BassP_rece2
+  - first:
+      74: -3710546551779884795
+    second: BassP_rece
+  - first:
+      74: 4353453466476947372
+    second: BassP_plynieWolno
+  - first:
+      74: -6572983794006095209
+    second: BassP_plynieSzybko
+  - first:
+      74: -9035656011591593349
+    second: BassP_plynieStoi
+  - first:
+      74: -2192013376238725635
+    second: BassP_plynieSrednio
+  - first:
+      74: -7478996940181899600
+    second: BassP_lezyPoWalce3
+  - first:
+      74: -8102272658512250342
+    second: BassP_lezyPoWalce2
+  - first:
+      74: 252949302839682126
+    second: BassP_lezyPoWalce
+  - first:
+      74: -812739582852399225
+    second: BassP_atakPrzynety
+  - first:
+      74: 2309789884207188202
+    second: BassP_walkaWypieHaczyk
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
