@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,8 +7,6 @@ namespace FishingRodSystem
     {
         [SerializeField] private List<Transform> grommets = new List<Transform>();
 
-
-       
         // Start is called before the first frame update
         void Start()
         {
@@ -19,8 +16,11 @@ namespace FishingRodSystem
         // Update is called once per frame
         void Update()
         {
-            UpdateVein();
-            DrawVein();
+            for (int i = 0; i < simulationIterationNumber; i++)
+            {
+                UpdateVein();
+                DrawVein();
+            }
         }
 
         /// <summary>
@@ -62,22 +62,6 @@ namespace FishingRodSystem
         protected override void UpdateVein()
         {
             CreateVein();
-
-           // Vector3[] segmentsPositions = new Vector3[veinSegmentsList.Count];
-
-            //lineRenderer.positionCount = segmentsPositions.Length;
-           // lineRenderer.SetPositions(segmentsPositions);
-
-            /*
-            veinSegmentsList.Add(new VeinSegment(startPoint.position));
-
-            for (int i = 0; i < grommets.Count; i++)
-            {
-                veinSegmentsList.Add(new VeinSegment(grommets[i].position));
-            }
-
-            veinSegmentsList.Add(new VeinSegment(endPoint.position));
-            */
         }
     }
 }

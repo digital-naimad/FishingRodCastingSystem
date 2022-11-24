@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace FishingRodSystem
@@ -14,8 +16,10 @@ namespace FishingRodSystem
         [SerializeField] private float hitMarkerLifetime = 2.0f;
         [SerializeField] private LayerMask raycastingLayer;
 
-        [Header("Reel")]
+        [Header("Reel & veins")]
         [SerializeField] private ReelController reelController;
+
+        [SerializeField] private VeinControllerRealistic veinController;
 
         private void Awake()
         {
@@ -34,38 +38,74 @@ namespace FishingRodSystem
         // Update is called once per frame
         void Update()
         {
+
+
+
+            ProcessInputs();
+
+            
+        }
+
+        private void ProcessInputs()
+        {
             // left mouse button
-            if (Input.GetButtonDown("Fire1")) 
+            if (Input.GetButtonDown("Fire1"))
             {
                 CastRod();
 
             }
 
+            /*
             // middle button of the mouse
-            if (Input.GetButtonDown("Fire3")) 
+            if (Input.GetButtonDown("Fire3"))
             {
                 reelController.StopSpinning();
             }
 
+            if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
+            {
+                reelController.SpinForward();
+                veinController.UnwindVein();
+            }
+            else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
+            {
+                reelController.SpinBackward();
+                veinController.WindVein();
+            }
+            else // wheel == 0
+            {
+                reelController.StopSpinning();
+            }
+            */
+
+            
             if (Input.mouseScrollDelta.y != 0)
             {
-                Debug.Log(name + " | scroll delta y" + Input.mouseScrollDelta.y);
+                //Debug.Log(name + " | scroll delta y" + Input.mouseScrollDelta.y);
 
                 if (Input.mouseScrollDelta.y > 0)
                 {
                     reelController.SpinForward();
+                    veinController.UnwindVein();
+                    
                 }
                 else
                 {
                     reelController.SpinBackward();
+                    veinController.WindVein();
                 }
 
             }
+            else //if (Input.mouseScrollDelta.y == 0)
+            {
+                reelController.StopSpinning();
+            }
+            
         }
 
         private void CastRod()
         {
-            // TODO: animate casting rod
+            // TODO: animate casting rod 
 
             Debug.Log(name + " | Cast rode");
 
@@ -96,5 +136,7 @@ namespace FishingRodSystem
 
             }
         }
+
+
     }
 }

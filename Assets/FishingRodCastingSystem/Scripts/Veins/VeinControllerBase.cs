@@ -16,7 +16,7 @@ namespace FishingRodSystem
         [SerializeField] protected bool areBothSidesStatic = false;
 
         [Range(.001f, 10f)]
-        [SerializeField] protected float veinSegmentLength = .05f; 
+        [SerializeField] protected float veinSegmentLength = .01f; 
 
         [Range(.001f, 10f)]
         [SerializeField] protected float veinThickness = .002f;
@@ -31,6 +31,16 @@ namespace FishingRodSystem
         [Header("List including all of the vein segments")]
         [SerializeField] protected List<VeinSegment> veinSegmentsList = new List<VeinSegment>();
 
+        /// <summary>
+        /// Warning: can be null
+        /// </summary>
+        public GameObject HangingObject
+        {
+            get { return endPoint.gameObject; }
+            set { endPoint = value.transform; }
+        }
+
+
         private void Awake()
         {
             if (lineRenderer == null)
@@ -39,9 +49,13 @@ namespace FishingRodSystem
             }
         }
 
+        
+
         protected abstract void CreateVein();
         protected abstract void UpdateVein();
         protected abstract void DrawVein();
+
+
 
     }
 }

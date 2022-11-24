@@ -14,23 +14,34 @@ namespace FishingRodSystem
 
         [Header("Dynamic values")]
         [Range(1, 1000)]
-        [SerializeField] private int numberOfSegments = 10;
+        [SerializeField] private int _numberOfSegments = 100;
 
-        
-       
+        [Range(1, 1000)]
+        [SerializeField] private int segmentsLimit = 1000;
 
+        private int NumberOfSegments
+        {
+            set
+            {
+                _numberOfSegments = Mathf.Clamp(value, 0, segmentsLimit);
+            }
+            get
+            {
+                return _numberOfSegments;
+            }
+        }
 
 
         #region MonoBehaviour's callbacks
 
         private void OnEnable()
         {
-           Application.onBeforeRender += DrawVein;
+           //Application.onBeforeRender += DrawVein;
         }
 
         private void OnDisable()
         {
-           Application.onBeforeRender -= DrawVein;
+           //Application.onBeforeRender -= DrawVein;
         }
 
 
@@ -43,8 +54,10 @@ namespace FishingRodSystem
         {
             if (veinSegmentsList.Count > 0)
             {
-                UpdateVein(veinSegmentsList, Time.deltaTime);
 
+                UpdateVein(veinSegmentsList, Time.deltaTime);
+                
+                /*
                 float timeStep = Time.deltaTime / (float)simulationIterationNumber;
 
                 for (int i = 0; i < simulationIterationNumber; i++)
@@ -52,6 +65,7 @@ namespace FishingRodSystem
                     UpdateVein(veinSegmentsList, timeStep);
                     DrawVein();
                 }
+                */
             }
 
             DrawVein();
@@ -68,7 +82,7 @@ namespace FishingRodSystem
 
         void FixedUpdate()
         {
-            
+            /*
             if (veinSegmentsList.Count > 0)
             {
                 float timeStep = Time.fixedDeltaTime / (float)simulationIterationNumber;
@@ -79,6 +93,8 @@ namespace FishingRodSystem
                     
                 }
             }
+            */
+            
             
         }
 
@@ -92,6 +108,39 @@ namespace FishingRodSystem
 
         #endregion
 
+
+        #region Public methods
+
+        /// <summary>
+        /// Reduces the length of the vein
+        /// </summary>
+        public void WindVein()
+        {
+            
+
+            NumberOfSegments--;
+            CreateVein();
+
+            Debug.Log(name + " | segments--: " + NumberOfSegments);
+        }
+
+
+        /// <summary>
+        /// Extends the length of the vein
+        /// </summary>
+        public void UnwindVein()
+        {
+            
+
+            NumberOfSegments++;
+            CreateVein();
+            Debug.Log(name + " | segments++: " + NumberOfSegments);
+        }
+
+
+        #endregion
+
+
         #region Override methods
 
         /// <summary>
@@ -103,11 +152,16 @@ namespace FishingRodSystem
 
             List<Vector3> veinSegmentsPositions = new List<Vector3>();
 
-            for (int i = 0; i < numberOfSegments; i++)
+            for (int i = 0; i < NumberOfSegments; i++)
             {
                 veinSegmentsPositions.Add(startPosition);
 
                 startPosition.y -= veinSegmentLength;
+            }
+
+            if (veinSegmentsList.Count > 0)
+            {
+                veinSegmentsList.Clear();
             }
 
             // Adds a segments from bottom to provide a dynamic length of the vein
@@ -371,7 +425,7 @@ namespace FishingRodSystem
 
             float expectedLength = veinSegmentLength * (float)(veinSegmentsList.Count - 1);
 
-            //Debug.Log(name + " | Expected length: " + expectedLength + " Current: " + currentLength);
+            Debug.Log(name + " | Expected length: " + expectedLength + " Current: " + currentLength);
         }
         #endregion
 

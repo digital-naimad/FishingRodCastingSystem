@@ -89,6 +89,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16
   reelController: {fileID: 9003166269131489465}
+  veinController: {fileID: 5455929049128669982}
 --- !u!1001 &83620243127296379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -503,11 +504,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8365641805781145118, guid: ba4799810f3dd2540ac08b887a27f413, type: 3}
   m_PrefabInstance: {fileID: 2637440450289886975}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &8771583669032777030 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6710643554589774777, guid: ba4799810f3dd2540ac08b887a27f413, type: 3}
-  m_PrefabInstance: {fileID: 2637440450289886975}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &718953280237046089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -5953707926418362442, guid: ba4799810f3dd2540ac08b887a27f413, type: 3}
@@ -536,6 +532,11 @@ Transform:
 --- !u!4 &3501480360351520838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1445043927123246777, guid: ba4799810f3dd2540ac08b887a27f413, type: 3}
+  m_PrefabInstance: {fileID: 2637440450289886975}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8771583669032777030 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6710643554589774777, guid: ba4799810f3dd2540ac08b887a27f413, type: 3}
   m_PrefabInstance: {fileID: 2637440450289886975}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3443652517173936504
@@ -716,8 +717,12 @@ PrefabInstance:
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8828142227676686382, guid: 06f3f953bfc86164eb21ea5a8c030ed2, type: 3}
+      propertyPath: _numberOfSegments
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828142227676686382, guid: 06f3f953bfc86164eb21ea5a8c030ed2, type: 3}
       propertyPath: veinSegmentLength
-      value: 0.05
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 8828142227676686382, guid: 06f3f953bfc86164eb21ea5a8c030ed2, type: 3}
       propertyPath: simulationIterationNumber
@@ -730,6 +735,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3903466264857633074, guid: 06f3f953bfc86164eb21ea5a8c030ed2, type: 3}
   m_PrefabInstance: {fileID: 3545606163188415280}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5455929049128669982 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8828142227676686382, guid: 06f3f953bfc86164eb21ea5a8c030ed2, type: 3}
+  m_PrefabInstance: {fileID: 3545606163188415280}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51829346e5054584abbaecedaf5b2765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3933591930882443805
 PrefabInstance:
   m_ObjectHideFlags: 0
