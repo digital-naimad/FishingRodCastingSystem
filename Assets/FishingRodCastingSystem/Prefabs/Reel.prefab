@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3782680573994841635}
   - component: {fileID: 6362768997362490715}
+  - component: {fileID: 8602120677107116818}
   m_Layer: 0
   m_Name: Reel
   m_TagString: Untagged
@@ -51,6 +52,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8602120677107116818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915387465661481776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d81799bae04ad4b9f0b9b838b3903e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reelAnimator: {fileID: 6362768997362490715}
 --- !u!1001 &4663425698243515528
 PrefabInstance:
   m_ObjectHideFlags: 0
