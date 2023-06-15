@@ -1,2 +1,2 @@
-# FishingRodCastingSystem
- Recruitment task for Ultimate Games
+# Quickly prepared prototype for fishing rod casting system
+
